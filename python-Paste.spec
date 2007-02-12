@@ -1,5 +1,5 @@
 Summary:	Tools for using a Web Server Gateway Interface stack
-Summary(pl):	Narzêdzia do u¿ywania stosu Web Server Gateway Interface
+Summary(pl.UTF-8):   NarzÄ™dzia do uÅ¼ywania stosu Web Server Gateway Interface
 Name:		python-Paste
 Version:	1.1.1
 Release:	1
@@ -20,11 +20,11 @@ nested to build web applications. Each piece of middleware uses the
 WSGI (PEP 333) interface, and should be compatible with other
 middleware based on those interfaces.
 
-%description -l pl
-Ten pakiet dostarcza kilka czê¶ci "warstwy po¶redniej" (lub filtrów),
-które mo¿na osadzaæ w celu zbudowania aplikacji WWW. Ka¿da czê¶æ
-warstwy po¶redniej u¿ywa interfejsu WSGI (PEP 333) i powinna byæ
-kompatybilna z inn± warstw± po¶redni± opart± na tych interfejsach.
+%description -l pl.UTF-8
+Ten pakiet dostarcza kilka czÄ™Å›ci "warstwy poÅ›redniej" (lub filtrÃ³w),
+ktÃ³re moÅ¼na osadzaÄ‡ w celu zbudowania aplikacji WWW. KaÅ¼da czÄ™Å›Ä‡
+warstwy poÅ›redniej uÅ¼ywa interfejsu WSGI (PEP 333) i powinna byÄ‡
+kompatybilna z innÄ… warstwÄ… poÅ›redniÄ… opartÄ… na tych interfejsach.
 
 %prep
 %setup -q -n Paste-%{version}
