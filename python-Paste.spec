@@ -1,5 +1,5 @@
 Summary:	Tools for using a Web Server Gateway Interface stack
-Summary(pl.UTF-8):   Narzędzia do używania stosu Web Server Gateway Interface
+Summary(pl.UTF-8):	Narzędzia do używania stosu Web Server Gateway Interface
 Name:		python-Paste
 Version:	1.1.1
 Release:	1
