@@ -9,7 +9,9 @@ Source0:	http://cheeseshop.python.org/packages/source/P/Paste/Paste-%{version}.t
 # Source0-md5:	a6a58d08dc4bff91d5d1c519d2277f8a
 URL:		http://pythonpaste.org/
 BuildRequires:	python-devel
+BuildRequires:	python-modules
 BuildRequires:	python-setuptools >= 0.6-0.a9.1
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
