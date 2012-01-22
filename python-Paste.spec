@@ -1,12 +1,12 @@
 Summary:	Tools for using a Web Server Gateway Interface stack
 Summary(pl.UTF-8):	Narzędzia do używania stosu Web Server Gateway Interface
 Name:		python-Paste
-Version:	1.7.2
-Release:	3
+Version:	1.7.5.1
+Release:	1
 Group:		Libraries/Python
 License:	X11/MIT
 Source0:	http://cheeseshop.python.org/packages/source/P/Paste/Paste-%{version}.tar.gz
-# Source0-md5:	a6a58d08dc4bff91d5d1c519d2277f8a
+# Source0-md5:	7ea5fabed7dca48eb46dc613c4b6c4ed
 URL:		http://pythonpaste.org/
 BuildRequires:	python-devel
 BuildRequires:	python-modules
