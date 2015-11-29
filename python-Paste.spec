@@ -8,6 +8,7 @@ License:	X11/MIT
 Source0:	http://cheeseshop.python.org/packages/source/P/Paste/Paste-%{version}.tar.gz
 # Source0-md5:	7ea5fabed7dca48eb46dc613c4b6c4ed
 URL:		http://pythonpaste.org/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	python-devel
 BuildRequires:	python-modules
 BuildRequires:	python-setuptools >= 0.6-0.a9.1
