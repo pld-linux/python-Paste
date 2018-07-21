@@ -1,0 +1,17 @@
+--- Paste-2.0.3/paste/auth/digest.py.orig	2015-04-23 22:48:37.000000000 +0200
++++ Paste-2.0.3/paste/auth/digest.py	2018-07-21 16:59:34.093889555 +0200
+@@ -52,12 +52,12 @@
+                 prev = item
+                 continue
+             else:
+-                raise StopIteration
++                return
+         yield prev.strip()
+         prev = item
+ 
+     yield prev.strip()
+-    raise StopIteration
++    return
+ 
+ def _auth_to_kv_pairs(auth_string):
+     """ split a digest auth string into key, value pairs """
