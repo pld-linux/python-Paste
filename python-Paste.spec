@@ -9,7 +9,7 @@ Summary:	Tools for using a Web Server Gateway Interface stack
 Summary(pl.UTF-8):	Narzędzia do używania stosu Web Server Gateway Interface
 Name:		python-Paste
 Version:	2.0.3
-Release:	4
+Release:	5
 Group:		Libraries/Python
 License:	MIT
 #Source0Download: https://pypi.org/simple/paste/
