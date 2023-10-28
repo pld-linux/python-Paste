@@ -8,23 +8,22 @@
 Summary:	Tools for using a Web Server Gateway Interface stack
 Summary(pl.UTF-8):	Narzędzia do używania stosu Web Server Gateway Interface
 Name:		python-Paste
+# keep 2.x here for python2 support
 Version:	2.0.3
-Release:	6
+Release:	7
 Group:		Libraries/Python
 License:	MIT
 #Source0Download: https://pypi.org/simple/paste/
 Source0:	https://files.pythonhosted.org/packages/source/P/Paste/Paste-%{version}.tar.gz
 # Source0-md5:	1231e14eae62fa7ed76e9130b04bc61e
 Patch0:		%{name}-py3.7.patch
-# dead
-#URL:		http://pythonpaste.org/
 URL:		https://pypi.org/project/Paste/
 %if %{with python2}
 BuildRequires:	python-devel >= 1:2.6
 BuildRequires:	python-setuptools >= 0.6-0.a9.1
 %if %{with tests}
 BuildRequires:	python-nose >= 0.11
-BuildRequires:	python-six >= 1.4.0
+BuildRequires:	python-six >= 1.13.0
 %endif
 %endif
 %if %{with python3}
@@ -32,11 +31,11 @@ BuildRequires:	python3-devel >= 1:3.4
 BuildRequires:	python3-setuptools >= 0.6-0.a9.1
 %if %{with tests}
 BuildRequires:	python3-nose >= 0.11
-BuildRequires:	python3-six >= 1.4.0
+BuildRequires:	python3-six >= 1.13.0
 %endif
 %endif
 %if %{with doc}
-BuildRequires:	sphinx-pdg
+BuildRequires:	sphinx-pdg-2
 %endif
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
@@ -104,9 +103,7 @@ Dokumentacja API modułu Pythona Paste.
 %endif
 
 %if %{with doc}
-# no Makefile docs
-cd docs
-sphinx-build -b html . _build/html
+sphinx-build-2 -b html docs docs/_build/html
 %endif
 
 %install
