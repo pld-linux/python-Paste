@@ -86,7 +86,7 @@ Dokumentacja API modułu Pythona Paste.
 
 %prep
 %setup -q -n Paste-%{version}
-%patch0 -p1
+%patch -P 0 -p1
 
 # junk in archive
 %{__rm} paste/*.py.orig paste/util/*.py.orig
