@@ -1,7 +1,5 @@
 #
 # Conditional build:
-%bcond_without	python2	# CPython 2.x module
-%bcond_without	python3	# CPython 3.x module
 %bcond_without	doc	# Sphinx documentation
 %bcond_without	tests	# unit tests
 
@@ -10,7 +8,7 @@ Summary(pl.UTF-8):	Narzędzia do używania stosu Web Server Gateway Interface
 Name:		python-Paste
 # keep 2.x / < 3.7 here for python2 support
 Version:	2.0.3
-Release:	9
+Release:	10
 Group:		Libraries/Python
 License:	MIT
 #Source0Download: https://pypi.org/simple/paste/
@@ -18,21 +16,11 @@ Source0:	https://files.pythonhosted.org/packages/source/P/Paste/Paste-%{version}
 # Source0-md5:	1231e14eae62fa7ed76e9130b04bc61e
 Patch0:		%{name}-py3.7.patch
 URL:		https://pypi.org/project/Paste/
-%if %{with python2}
 BuildRequires:	python-devel >= 1:2.6
 BuildRequires:	python-setuptools >= 0.6-0.a9.1
 %if %{with tests}
 BuildRequires:	python-nose >= 0.11
 BuildRequires:	python-six >= 1.13.0
-%endif
-%endif
-%if %{with python3}
-BuildRequires:	python3-devel >= 1:3.4
-BuildRequires:	python3-setuptools >= 0.6-0.a9.1
-%if %{with tests}
-BuildRequires:	python3-nose >= 0.11
-BuildRequires:	python3-six >= 1.13.0
-%endif
 %endif
 %if %{with doc}
 BuildRequires:	sphinx-pdg-2
@@ -94,13 +82,7 @@ Dokumentacja API modułu Pythona Paste.
 %{__rm} tests/test_proxy.py
 
 %build
-%if %{with python2}
 %py_build %{?with_tests:test}
-%endif
-
-%if %{with python3}
-%py3_build %{?with_tests:test}
-%endif
 
 %if %{with doc}
 sphinx-build-2 -b html docs docs/_build/html
@@ -109,20 +91,13 @@ sphinx-build-2 -b html docs docs/_build/html
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%if %{with python2}
 %py_install
 
 %py_postclean
-%endif
-
-%if %{with python3}
-%py3_install
-%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%if %{with python2}
 %files
 %defattr(644,root,root,755)
 %doc README.rst docs/{license,news}.txt
@@ -137,25 +112,6 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitescriptdir}/paste/*.py[co]
 %{py_sitescriptdir}/Paste-%{version}-py*.egg-info
 %{py_sitescriptdir}/Paste-%{version}-py*-nspkg.pth
-%endif
-
-%if %{with python3}
-%files -n python3-Paste
-%defattr(644,root,root,755)
-%doc README.rst docs/{license,news}.txt
-# paste is also top dir for other python3-Paste* packages
-%dir %{py3_sitescriptdir}/paste
-%{py3_sitescriptdir}/paste/auth
-%{py3_sitescriptdir}/paste/cowbell
-%{py3_sitescriptdir}/paste/debug
-%{py3_sitescriptdir}/paste/evalexception
-%{py3_sitescriptdir}/paste/exceptions
-%{py3_sitescriptdir}/paste/util
-%{py3_sitescriptdir}/paste/*.py
-%{py3_sitescriptdir}/paste/__pycache__
-%{py3_sitescriptdir}/Paste-%{version}-py*.egg-info
-%{py3_sitescriptdir}/Paste-%{version}-py*-nspkg.pth
-%endif
 
 %if %{with doc}
 %files apidocs
